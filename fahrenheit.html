@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<style>
+hr {
+    border-width: 0px;
+}
+</style>
+<p style="font-size: 25px;"><b>Introduza o valor que deseja converter e escolha para que unidade o deseja fazer.</b></p>
+
+<form name="form_1">
+<label>Valor Desejado: <input type="number" id="valor" /></label>
+<label>Conversão: <input type="number" id="resultado" readonly /></label>
+<br>
+<hr>
+<button type="button" onclick="celsius()">Celsius</button>
+<button type="button" onclick="kelvin()">Kelvin</button>  
+</form>
+
+<script>
+function celsius() {
+var a, res_a
+a = parseInt(document.getElementById("valor").value)
+res_a = ((a - 32) * (5 / 9)).toFixed(2)
+document.getElementById("resultado").value = res_a
+updateBackground(a)
+}
+
+function kelvin() {
+var b, res_b
+b = parseInt(document.getElementById("valor").value)
+res_b = (((b - 32) * (5 / 9)) + 273.15).toFixed(2)
+document.getElementById("resultado").value = res_b
+updateBackground(b)
+}
+
+function updateBackground(temp) {
+    let celsiusValue = temp;
+    console.log(celsiusValue)
+    if(isNaN(celsiusValue)) {
+      document.body.style.backgroundColor = "white"
+    }else if (celsiusValue <= 13) {
+      document.body.style.backgroundColor = "blue";
+    }else if (celsiusValue > 13 && celsiusValue <= 23) {
+      document.body.style.backgroundColor = "yellow";
+    } else {
+      document.body.style.backgroundColor = "red";
+    }
+  }
+</script>
+<hr>
+
+<a href="index.html">
+<button>Voltar</button>
+</a>
+<hr>
+
+<p style="font-size: 20px;">Fórmulas usadas:</p>
+
+<a href="https://www.google.com/search?q=what+is+the+formula+of+fahrenheit+to+celsius&sca_esv=49c9ff0e2cb46d55&rlz=1C1JJTC_pt-PTPT1041PT1041&sxsrf=ADLYWIJX_nXDUvkG3rzFP0A9WW12S8sh-A%3A1731773519308&ei=T8Q4Z6DIEr3X7M8P6pSl6Aw&oq=what+is+the+formula+of+fahr&gs_lp=Egxnd3Mtd2l6LXNlcnAiG3doYXQgaXMgdGhlIGZvcm11bGEgb2YgZmFocioCCAAyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkiXHFDwC1jfEHABeAGQAQCYAWugAfcCqgEDMy4xuAEByAEA-AEBmAIFoAKkA8ICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIKEAAYgAQYQxiKBcICChAAGIAEGBQYhwKYAwCIBgGQBgqSBwMzLjKgB-Yc&sclient=gws-wiz-serp" target="_blank">
+<button>Fahrenheit ---» Celsius</button>
+</a>
+<br>
+<a href="https://www.google.com/search?q=what+is+the+formula+of+fahrenheit+to+kelvin&sca_esv=49c9ff0e2cb46d55&rlz=1C1JJTC_pt-PTPT1041PT1041&sxsrf=ADLYWIKm50_EtPFjpeEGAFChEmGfT7ew0A%3A1731773525839&ei=VcQ4Z7TyMomLkdUPs4WgoAg&ved=0ahUKEwj08NqOn-GJAxWJRaQEHbMCCIQQ4dUDCA8&uact=5&oq=what+is+the+formula+of+fahrenheit+to+kelvin&gs_lp=Egxnd3Mtd2l6LXNlcnAiK3doYXQgaXMgdGhlIGZvcm11bGEgb2YgZmFocmVuaGVpdCB0byBrZWx2aW4yBRAAGIAEMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSJoLULoEWLQJcAF4AZABAJgBbKABywSqAQM0LjK4AQPIAQD4AQGYAgegAoAFwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigWYAwCIBgGQBgqSBwMyLjWgB788&sclient=gws-wiz-serp" target="_blank">
+<button>Fahrenheit ---» Kelvin</button>
+</a>
+
+</center>
+</body>
+</html>
